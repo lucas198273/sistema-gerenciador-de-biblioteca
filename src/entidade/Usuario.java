@@ -1,6 +1,8 @@
 package entidade;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Usuario{
     
@@ -11,13 +13,19 @@ public class Usuario{
     private Date dataNascimento;
     private double valorEmConta = 0.0;
 
-    lis
+    private List<AluguelLivro> registrosDeEmprestimoDoCliente = new ArrayList<>();
     public Usuario( String senhaUsuaripo, String nomeUsuario, int idade, Date dataNascimento) {
         
         this.senhaUsuaripo = senhaUsuaripo;
         this.nomeUsuario = nomeUsuario;
         this.dataNascimento = dataNascimento;
         
+    }
+    public List<AluguelLivro> getRegistrosDeEmprestimoDoCliente() {
+        return registrosDeEmprestimoDoCliente;
+    }
+    public void addRegistrosDeEmprestimoDoCliente(AluguelLivro registrosDeEmprestimo) {
+       registrosDeEmprestimoDoCliente.add(registrosDeEmprestimo);
     }
     public boolean isUsuarioOn() {
         return usuarioOn;

@@ -21,9 +21,12 @@ public class RegistroDeEmprestimo implements OperacoesDeRegistro {
             System.out.println("status do livro esta como |EMPRESTADO| VERIFIQUE POSSIVEIS ERROS"+ 
             "STATUS CONTINUA COMO: | EMPRETADO|");
         }
+        Usuario cliente = registroAluguel.getUsuario();
+        cliente.addRegistrosDeEmprestimoDoCliente(registroAluguel);
         registrarAluguelLivro(registroAluguel);
         livrosEmprestados.add(registroAluguel.getLivro());
         historicoDeEmprestimosAluguel.add(registroAluguel);  // Adiciona ao histórico no momento do empréstimo
+        
     }
     public Map<Livro, AluguelLivro> getRegistrosEmprestimo() {
         return registrosEmprestimo;

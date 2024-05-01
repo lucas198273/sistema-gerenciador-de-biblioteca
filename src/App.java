@@ -39,7 +39,7 @@ public class App {
         
         }
         System.out.println("selecone o livro pelo codigo de identificação");
-        int codigoId = sc
+        
 
        
         
